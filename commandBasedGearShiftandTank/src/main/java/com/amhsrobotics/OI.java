@@ -1,6 +1,7 @@
 package com.amhsrobotics;
 
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.buttons.Button;
 
 public class OI {
@@ -9,18 +10,31 @@ public class OI {
     public static OI getInstance() {
         return ourInstance;
     }
+
     private XboxController controller = new XboxController(0);
+
     private OI() {
 
-        Button button = new Button() {
+        Button shiftHigh = new Button() {
             @Override
             public boolean get() {
-                return controller.getAButtonPressed();
+                return controller.getBumperPressed(GenericHID.Hand.kRight);
             }
         };
-        button.whenPressed(new ExampleCommand());
+        shiftHigh.whenPressed(new GearShiftHigh());
+
+        Button shiftLow = new Button() {
+            @Override
+            public boolean get() {
+                return controller.getBumperPressed(GenericHID.Hand.kLeft);
+            }
+        };
+        shiftLow.whenPressed(new GearShiftLow());
     }
+
     public XboxController getController(){
+
         return controller;
+
     }
 }

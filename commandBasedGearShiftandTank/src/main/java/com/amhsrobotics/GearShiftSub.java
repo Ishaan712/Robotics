@@ -1,12 +1,11 @@
 package com.amhsrobotics;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class GearShiftSub extends Subsystem {
 
-    private DoubleSolenoid gearShiftSolenoid = new DoubleSolenoid(0, 1);
+    private DoubleSolenoid solenoid = new DoubleSolenoid(0, 1);
 
     private static GearShiftSub ourInstance = new GearShiftSub();
 
@@ -27,13 +26,13 @@ public class GearShiftSub extends Subsystem {
 
     public void shiftHigh() {
 
-        gearShiftSolenoid.set(DoubleSolenoid.Value.kForward);
+        solenoid.set(DoubleSolenoid.Value.kForward);
 
     }
 
     public void shiftLow() {
 
-        gearShiftSolenoid.set(DoubleSolenoid.Value.kReverse);
+        solenoid.set(DoubleSolenoid.Value.kReverse);
 
     }
 
