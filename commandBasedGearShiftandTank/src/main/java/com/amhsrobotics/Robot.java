@@ -7,9 +7,10 @@ public class Robot extends TimedRobot {
   @SuppressWarnings("ResultOfMethodCallIgnored")
   @Override
   public void robotInit() {
-    ExampleSubsystem.getInstance();
-    ExampleSubsystem.getInstance().initHardware();
-    ExampleOI.getInstance();
+    DriveSubsystem.getInstance();
+    GearShiftSub.getInstance();
+    OI.getInstance();
+
   }
 
   @Override
