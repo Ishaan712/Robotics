@@ -3,7 +3,7 @@ package com.amhsrobotics;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ExampleCommand extends Command {
+public class ExampleCommand extends Command { //example command
 
 	public ExampleCommand(){
 		requires(ExampleSubsystem.getInstance());
